@@ -2190,51 +2190,55 @@ textarea {
         height: 52px;
     }
 
-    /* -- Zoom Parallax as Horizontal Gallery -- */
+    /* -- Zoom Parallax (Mobile-adapted, same effect as desktop) -- */
     .zoom-parallax {
         display: block !important;
-        margin-bottom: 0;
     }
 
-    .zoom-container {
-        height: auto !important;
+    .el-1 .img-wrapper {
+        width: 70vw;
+        height: 30vh;
     }
 
-    .zoom-sticky {
-        position: relative !important;
-        height: auto !important;
-        overflow-x: auto;
-        overflow-y: hidden;
-        display: flex;
-        gap: 12px;
-        padding: 24px 20px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        background: #050505;
+    .el-2 .img-wrapper {
+        width: 50vw;
+        height: 22vh;
+        top: -25vh;
+        left: 3vw;
     }
 
-    .zoom-sticky::-webkit-scrollbar {
-        display: none;
+    .el-3 .img-wrapper {
+        width: 35vw;
+        height: 30vh;
+        top: -8vh;
+        left: -20vw;
     }
 
-    .zoom-el {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        width: auto;
-        height: auto;
-        flex-shrink: 0;
-        display: block;
-        scroll-snap-align: center;
+    .el-4 .img-wrapper {
+        width: 45vw;
+        height: 22vh;
+        left: 22vw;
     }
 
-    .zoom-el .img-wrapper {
-        width: 75vw !important;
-        height: 50vh !important;
-        top: auto !important;
-        left: auto !important;
-        border-radius: 12px;
+    .el-5 .img-wrapper {
+        width: 40vw;
+        height: 20vh;
+        top: 22vh;
+        left: 3vw;
+    }
+
+    .el-6 .img-wrapper {
+        width: 45vw;
+        height: 20vh;
+        top: 22vh;
+        left: -18vw;
+    }
+
+    .el-7 .img-wrapper {
+        width: 35vw;
+        height: 16vh;
+        top: 18vh;
+        left: 20vw;
     }
 }
 
@@ -2313,9 +2317,39 @@ textarea {
         font-size: 1.3rem;
     }
 
-    .zoom-el .img-wrapper {
-        width: 80vw !important;
-        height: 40vh !important;
+    .el-1 .img-wrapper {
+        width: 80vw;
+        height: 28vh;
+    }
+
+    .el-2 .img-wrapper {
+        width: 55vw;
+        height: 20vh;
+    }
+
+    .el-3 .img-wrapper {
+        width: 40vw;
+        height: 26vh;
+    }
+
+    .el-4 .img-wrapper {
+        width: 50vw;
+        height: 20vh;
+    }
+
+    .el-5 .img-wrapper {
+        width: 45vw;
+        height: 18vh;
+    }
+
+    .el-6 .img-wrapper {
+        width: 50vw;
+        height: 18vh;
+    }
+
+    .el-7 .img-wrapper {
+        width: 40vw;
+        height: 14vh;
     }
 
     .nf-legal {
@@ -2778,5 +2812,3 @@ textarea {
     top: 22.5vh;
     left: 25vw;
 }
-
-/* Mobile: parallax is now a horizontal gallery (see 768px query) */

@@ -390,8 +390,8 @@ Solicito asesoramiento profesional para mi proyecto.`;
     const zoomElements = document.querySelectorAll('.zoom-el');
 
     if (zoomContainer && zoomElements.length > 0) {
-        // REDUCED scale targets to prevent pixelation (was 4,5,6,5,6,8,9)
-        const scaleTargets = [2, 2.5, 3, 2.5, 3, 3.5, 4];
+        // Scale targets matching the reference Framer Motion implementation
+        const scaleTargets = [4, 5, 6, 5, 6, 8, 9];
         let ticking = false;
 
         function updateZoomParallax() {
