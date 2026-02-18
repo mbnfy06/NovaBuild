@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura Técnica y Construcción de Alta Gama en Valencia | NovaBuild</title>
+    <meta name="description"
+        content="Especialistas en la ejecución de obra nueva residencial y reformas integrales de lujo en Valencia. Donde la excelencia técnica se encuentra con el diseño exclusivo.">
+    <meta property="og:title" content="Arquitectura Técnica y Construcción de Alta Gama en Valencia | NovaBuild">
+    <meta property="og:description"
+        content="Especialistas en la ejecución de obra nueva residencial y reformas integrales de lujo en Valencia. Donde la excelencia técnica se encuentra con el diseño exclusivo.">
+    <meta property="og:type" content="website">
+
+    <!-- Schema.org LocalBusiness Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GeneralContractor",
+      "name": "NovaBuild Arquitectura & Construcción",
+      "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80",
+      "description": "Firma boutique de arquitectura técnica y construcción de alta gama en Valencia. Especialistas en obra nueva residencial y reformas integrales de lujo.",
+      "areaServed": ["Valencia", "Paterna", "La Eliana", "Bétera", "Godella", "Rocafort"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. de las Cortes Valencianas 58",
+        "addressLocality": "Valencia",
+        "postalCode": "46015",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.4917, 
+        "longitude": -0.3956
+      },
+      "url": "https://novabuild.es",
+      "telephone": "+34623458921",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="cinema-grain"></div>
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="Gemini_Generated_Image_azxratazxratazxr-Photoroom.png" alt="NovaBuild Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" class="nav-link active">INICIO</a></li>
+                <li><a href="#nosotros" class="nav-link">NOSOTROS</a></li>
+                <li><a href="#servicios" class="nav-link">SERVICIOS</a></li>
+                <li><a href="#proyectos" class="nav-link">PROYECTOS</a></li>
+                <li><a href="#contacto" class="nav-link">CONTACTO</a></li>
+            </ul>
+            <a href="#contacto" class="nav-cta">CONTACTAR</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-links">
+            <li><a href="#inicio" class="mobile-link">INICIO</a></li>
+            <li><a href="#nosotros" class="mobile-link">NOSOTROS</a></li>
+            <li><a href="#servicios" class="mobile-link">SERVICIOS</a></li>
+            <li><a href="#proyectos" class="mobile-link">PROYECTOS</a></li>
+            <li><a href="#contacto" class="mobile-link">CONTACTO</a></li>
+            <li><a href="#contacto" class="mobile-cta">CONTACTAR</a></li>
+        </ul>
+    </div>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <!-- Image Slideshow -->
+            <div class="hero-slides-container">
+                <img src="assets/hero-1.jpg" alt="Arquitectura moderna" class="hero-slide active">
+                <img src="assets/hero-2.jpg" alt="Interior de lujo" class="hero-slide">
+                <img src="assets/hero-3.png" alt="Villa exclusiva" class="hero-slide">
+            </div>
+            <!-- Image Slideshow (Now the primary background) -->
+            <div class="hero-slides-container">
+                <img src="assets/hero-1.jpg" alt="Arquitectura moderna" class="hero-slide active">
+                <img src="assets/hero-2.jpg" alt="Interior de lujo" class="hero-slide">
+                <img src="assets/hero-3.png" alt="Villa exclusiva" class="hero-slide">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-grain"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge-container">
+                <h2 class="hero-badge">NovaBuild · DISEÑO Y CONSTRUCCIÓN</h2>
+            </div>
+            <h1 class="hero-title-reveal">
+                <span class="reveal-line">ARQUITECTURA</span>
+                <span class="reveal-line">TÉCNICA &</span>
+                <span class="reveal-line text-accent">ALTA GAMA</span>
+            </h1>
+            <p class="hero-subtitle">Especialistas en la ejecución de obra nueva residencial y reformas integrales de
+                lujo en Valencia.<br>Donde la excelencia técnica se encuentra con el diseño exclusivo.</p>
+            <a href="#contacto" class="interactive-hover-btn">
+                <div class="hover-btn-dot"></div>
+                <span class="hover-btn-text-initial">
+                    INICIAR PROYECTO
+                </span>
+                <div class="hover-btn-text-reveal">
+                    <span>INICIAR PROYECTO</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Scroll Indicator now inside content for better flow -->
+            <div class="hero-scroll">
+                <div class="scroll-line"></div>
+                <span>Descubre</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT / NOSOTROS ============ -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span>Nuestra Firma</span>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="about-title">Expertos en Construcción de Obra Civil en la Comunidad Valenciana</h2>
+                    <p class="about-text">
+                        <strong>NOVABUILD CONSTRUCTORA</strong> cuenta con más de 15 años de experiencia dedicada a la
+                        obra civil, destacando como empresa de <strong>reformas integrales en Valencia capital</strong>
+                        y alrededores.
+                        Nos especializamos en la <strong>construcción de chalets en Bétera</strong> y <strong>La
+                            Eliana</strong>, así como en la <strong>rehabilitación de fachadas</strong> y edificios
+                        antiguos.
+                        Te acompañamos y gestionamos cada etapa del proyecto, desde el diseño inicial con nuestros
+                        <strong>arquitectos en Paterna</strong>, hasta la entrega final de la obra llave en mano.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-count="18">0</span>
+                            <span class="stat-label">Años de<br>Excelencia</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="120">0</span>
+                            <span class="stat-label">Proyectos<br>Singulares</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="100">0</span>
+                            <span class="stat-label">Garantía<br>Cumplimiento</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+                        alt="Equipo NovaBuild trabajando" loading="lazy">
+                    <div class="about-image-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ZOOM PARALLAX ============ -->
+    <section class="zoom-parallax" id="zoom-parallax">
+        <div class="zoom-container">
+            <div class="zoom-sticky">
+                <div class="zoom-el el-1">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=3840&q=90&auto=format"
+                            alt="Villa de lujo moderna">
+                    </div>
+                </div>
+                <div class="zoom-el el-2">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=3840&q=90&auto=format"
+                            alt="Interior de diseño">
+                    </div>
+                </div>
+                <div class="zoom-el el-3">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=3840&q=90&auto=format"
+                            alt="Arquitectura premium">
+                    </div>
+                </div>
+                <div class="zoom-el el-4">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=3840&q=90&auto=format"
+                            alt="Casa contemporánea">
+                    </div>
+                </div>
+                <div class="zoom-el el-5">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=3840&q=90&auto=format"
+                            alt="Detalles constructivos">
+                    </div>
+                </div>
+                <div class="zoom-el el-6">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=3840&q=90&auto=format"
+                            alt="Fachada residencial">
+                    </div>
+                </div>
+                <div class="zoom-el el-7">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=3840&q=90&auto=format"
+                            alt="Residencia exclusiva">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS SHOWCASE (Fullscreen, connected to parallax) ============ -->
+    <section class="projects-showcase" id="proyectos">
+        <!-- Background images (crossfade) -->
+        <div class="showcase-backgrounds">
+            <div class="showcase-bg active"
+                style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=3840&q=90&auto=format')">
+            </div>
+            <div class="showcase-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=3840&q=90&auto=format')">
+            </div>
+            <div class="showcase-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=3840&q=90&auto=format')">
+            </div>
+            <div class="showcase-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=3840&q=90&auto=format')">
+            </div>
+            <div class="showcase-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=3840&q=90&auto=format')">
+            </div>
+            <div class="showcase-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=3840&q=90&auto=format')">
+            </div>
+            <div class="showcase-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=3840&q=90&auto=format')">
+            </div>
+        </div>
+        <div class="showcase-overlay"></div>
+
+        <!-- Project info slides -->
+        <div class="showcase-content">
+            <div class="showcase-label">
+                <span class="label-line"></span>
+                <span>Portfolio Selecto</span>
+            </div>
+
+            <div class="showcase-slides">
+                <div class="showcase-slide active" data-index="0">
+                    <span class="showcase-category">Obra Nueva • Lujo</span>
+                    <h2 class="showcase-title">Villa Mediterránea</h2>
+                    <p class="showcase-location">La Eliana, Valencia</p>
+                </div>
+                <div class="showcase-slide" data-index="1">
+                    <span class="showcase-category">Promoción Residencial</span>
+                    <h2 class="showcase-title">Residencial Levante</h2>
+                    <p class="showcase-location">Paterna, Valencia</p>
+                </div>
+                <div class="showcase-slide" data-index="2">
+                    <span class="showcase-category">Rehabilitación Integral</span>
+                    <h2 class="showcase-title">Finca El Bosque</h2>
+                    <p class="showcase-location">Bétera, Valencia</p>
+                </div>
+                <div class="showcase-slide" data-index="3">
+                    <span class="showcase-category">Reforma Ático</span>
+                    <h2 class="showcase-title">Skyline Malvarrosa</h2>
+                    <p class="showcase-location">Malvarrosa, Valencia</p>
+                </div>
+                <div class="showcase-slide" data-index="4">
+                    <span class="showcase-category">Obra Nueva</span>
+                    <h2 class="showcase-title">Residencial Del Sol</h2>
+                    <p class="showcase-location">Godella, Valencia</p>
+                </div>
+                <div class="showcase-slide" data-index="5">
+                    <span class="showcase-category">Interiorismo &amp; Reforma</span>
+                    <h2 class="showcase-title">Industrial Loft Ruzafa</h2>
+                    <p class="showcase-location">Ruzafa, Valencia</p>
+                </div>
+                <div class="showcase-slide" data-index="6">
+                    <span class="showcase-category">Vivienda Unifamiliar</span>
+                    <h2 class="showcase-title">Casa Albufera</h2>
+                    <p class="showcase-location">El Saler, Valencia</p>
+                </div>
+            </div>
+
+            <!-- Counter -->
+            <div class="showcase-counter">
+                <span class="counter-current">01</span>
+                <span class="counter-sep">/</span>
+                <span class="counter-total">07</span>
+            </div>
+        </div>
+
+        <!-- Navigation arrows -->
+        <div class="showcase-nav">
+            <button class="showcase-arrow prev" id="showcasePrev" aria-label="Proyecto anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button class="showcase-arrow next" id="showcaseNext" aria-label="Proyecto siguiente">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="showcase-progress">
+            <div class="showcase-progress-bar" id="showcaseProgressBar"></div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES / SERVICIOS ============ -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-label light">
+                <span class="label-line"></span>
+                <span>Expertise</span>
+            </div>
+            <h2 class="section-title light">Servicios de Construcción, Rehabilitación y Arquitectura</h2>
+            <div class="bento-grid">
+                <!-- Service 1: Reformas Integrales (Large/Feature - 2x2) -->
+                <div class="bento-card" data-span="large">
+                    <div class="spotlight-overlay"></div>
+                    <div class="bento-bg-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+                            alt="Reformas Integrales de Lujo" loading="lazy">
+                        <div class="bento-image-overlay"></div>
+                    </div>
+                    <div class="bento-content text-overlay">
+                        <div class="service-top">
+                            <span class="service-tag">High End</span>
+                            <div class="service-icon-box filled">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <path d="M22 6l-10 7L2 6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="bento-title large">Reformas<br>Integrales</h3>
+                            <p class="bento-desc">Transformación radical de espacios. Acabados premium, gestión llave en
+                                mano y diseño exclusivo para villas y áticos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Obra Nueva (Vertical - 1x2) -->
+                <div class="bento-card" data-span="tall">
+                    <div class="spotlight-overlay"></div>
+                    <div class="bento-content">
+                        <div class="service-icon-box">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M2 22h20M4 22V7l8-5 8 5v15M6 22V9l6-3.5L18 9v13M10 22v-4h4v4" />
+                            </svg>
+                        </div>
+                        <h3 class="bento-title">Obra Nueva<br>Residencial</h3>
+                        <ul class="service-feature-list">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Chalets de Autor</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Eficiencia A+</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Plazos Garantizados</span>
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Dirección Técnica</span>
+                            </li>
+                        </ul>
+                        <div class="bento-bg-icon">
+                            <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="0.5" opacity="0.1">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Arquitectura & Interiorismo (Wide - 3x1) -->
+                <div class="bento-card" data-span="wide">
+                    <div class="spotlight-overlay"></div>
+                    <div class="bento-content horizontal">
+                        <div class="service-left">
+                            <div class="service-icon-box">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5" />
+                                    <path d="M2 12l10 5 10-5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="bento-title">Arquitectura Técnica & Interiorismo</h3>
+                                <p class="bento-desc">Diseño de planos, licencias, paisajismo y selección de materiales
+                                    nobles.</p>
+                            </div>
+                        </div>
+                        <div class="service-action">
+                            <div class="arrow-circle">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT / CONTACTO ============ -->
+    <section class="contact-section" id="contacto">
+        <!-- Animated dot grid background -->
+        <div class="contact-dot-grid"></div>
+        <!-- Aurora glow blobs -->
+        <div class="contact-aurora">
+            <div class="aurora-blob aurora-blob-1"></div>
+            <div class="aurora-blob aurora-blob-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="contact-header">
+                <div class="section-label">
+                    <span class="label-line"></span>
+                    <span>Contacto</span>
+                </div>
+                <h2 class="contact-headline">Hagamos realidad<br><span class="headline-gradient">tu proyecto</span></h2>
+                <p class="contact-subheadline">Cuéntanos tu visión y te ayudaremos a construirla. Respuesta garantizada
+                    en menos de 24h.</p>
+            </div>
+
+            <div class="contact-layout">
+                <!-- Left: Form Card with Glassmorphism -->
+                <div class="contact-card" id="contactCard">
+                    <div class="card-spotlight"></div>
+                    <div class="card-border-glow"></div>
+                    <form class="nova-form" id="contactForm">
+                        <div class="form-row-2">
+                            <div class="nova-field">
+                                <input type="text" id="nombre" name="nombre" required placeholder=" ">
+                                <label for="nombre">Nombre</label>
+                                <div class="field-highlight"></div>
+                            </div>
+                            <div class="nova-field">
+                                <input type="text" id="apellido" name="apellido" placeholder=" ">
+                                <label for="apellido">Apellido</label>
+                                <div class="field-highlight"></div>
+                            </div>
+                        </div>
+                        <div class="nova-field">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Email</label>
+                            <div class="field-highlight"></div>
+                        </div>
+                        <div class="nova-field">
+                            <input type="text" id="zona" name="zona" placeholder=" ">
+                            <label for="zona">Zona / Ubicación de la obra</label>
+                            <div class="field-highlight"></div>
+                        </div>
+                        <div class="nova-field">
+                            <textarea id="mensaje" name="mensaje" rows="4" required placeholder=" "></textarea>
+                            <label for="mensaje">Cuéntanos sobre tu proyecto…</label>
+                            <div class="field-highlight"></div>
+                        </div>
+                        <button type="submit" class="nova-submit" id="formSubmit">
+                            <span class="submit-text">Enviar por WhatsApp</span>
+                            <span class="submit-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                    <path
+                                        d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.519 5.832L0 24l6.335-1.49A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.793 9.793 0 01-5.29-1.549l-.38-.225-3.94.927.99-3.798-.25-.393A9.793 9.793 0 012.18 12 9.82 9.82 0 0112 2.18 9.82 9.82 0 0121.82 12 9.82 9.82 0 0112 21.82z" />
+                                </svg>
+                            </span>
+                            <span class="submit-arrow">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <p class="form-disclaimer">Al enviar, se abrirá WhatsApp con tu consulta precompletada.</p>
+                    </form>
+                </div>
+
+                <!-- Right: Info Column -->
+                <div class="contact-info-col">
+                    <!-- Direct CTA Card -->
+                    <div class="info-cta-card">
+                        <div class="cta-icon-ring">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="cta-wa-icon">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.519 5.832L0 24l6.335-1.49A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.793 9.793 0 01-5.29-1.549l-.38-.225-3.94.927.99-3.798-.25-.393A9.793 9.793 0 012.18 12 9.82 9.82 0 0112 2.18 9.82 9.82 0 0121.82 12 9.82 9.82 0 0112 21.82z" />
+                            </svg>
+                        </div>
+                        <h3 class="cta-title">¿Prefieres el chat directo?</h3>
+                        <p class="cta-desc">Abre WhatsApp y hablamos ahora mismo sobre tu proyecto.</p>
+                        <a href="https://wa.me/34623458921" class="cta-wa-btn" target="_blank" rel="noopener">
+                            <span>Abrir chat ahora</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Info Cards Stack -->
+                    <div class="info-stack">
+                        <a href="tel:+34623458921" class="nova-info-card">
+                            <div class="nic-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                            </div>
+                            <div class="nic-text">
+                                <span class="nic-label">Teléfono</span>
+                                <span class="nic-value">+34 623 458 921</span>
+                            </div>
+                            <div class="nic-arrow">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="mailto:info@novabuild.es" class="nova-info-card">
+                            <div class="nic-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div class="nic-text">
+                                <span class="nic-label">Email</span>
+                                <span class="nic-value">info@novabuild.es</span>
+                            </div>
+                            <div class="nic-arrow">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M7 17l9.2-9.2M17 17V7H7" />
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="nova-info-card">
+                            <div class="nic-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div class="nic-text">
+                                <span class="nic-label">Ubicación</span>
+                                <span class="nic-value">Av. Cortes Valencianas 58<br>46015 Valencia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="nova-map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.4566372132646!2d-0.4047648235471616!3d39.48158587160358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4cf20b8f03%3A0xc47671343715d023!2sAv.%20de%20les%20Corts%20Valencianes%2C%2058%2C%20Benicalap%2C%2046015%20Val%C3%A8ncia%2C%20Valencia!5e0!3m2!1ses!2ses!4v1709123456789!5m2!1ses!2ses"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="nova-footer">
+        <div class="footer-glow"></div>
+        <div class="container">
+            <!-- Top: Big CTA strip -->
+            <div class="footer-cta-strip">
+                <div class="fcs-text">
+                    <span class="fcs-label">¿Listo para empezar?</span>
+                    <h3 class="fcs-headline">Construyamos algo <span class="headline-gradient">extraordinario</span>
+                    </h3>
+                </div>
+                <a href="#contacto" class="fcs-btn">
+                    <span>Iniciar proyecto</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <!-- Main Footer Grid -->
+            <div class="nova-footer-grid">
+                <div class="nf-brand">
+                    <a href="#" class="nf-logo">
+                        <img src="Gemini_Generated_Image_azxratazxratazxr-Photoroom.png" alt="NovaBuild Logo"
+                            class="logo-img footer-logo-img">
+                    </a>
+                    <p class="nf-tagline">Construcción y reformas integrales con foco en calidad, diseño y atención
+                        personalizada.</p>
+                    <p class="nf-geo">Prestando servicio en: Valencia, Paterna, Godella, Bétera, La Eliana y L'Horta
+                        Nord.</p>
+                </div>
+
+                <div class="nf-links-group">
+                    <h4 class="nf-heading">Navegación</h4>
+                    <ul class="nf-list">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">La Firma</a></li>
+                        <li><a href="#servicios">Expertise</a></li>
+                        <li><a href="#proyectos">Portfolio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="nf-links-group">
+                    <h4 class="nf-heading">Oficina Central</h4>
+                    <ul class="nf-list nf-contact-list">
+                        <li><a href="tel:+34623458921">+34 623 458 921</a></li>
+                        <li><a href="mailto:proyectos@novabuild.es">proyectos@novabuild.es</a></li>
+                        <li><span>Av. Cortes Valencianas 58<br>46015 Valencia, España</span></li>
+                    </ul>
+                </div>
+
+                <div class="nf-links-group">
+                    <h4 class="nf-heading">Síguenos</h4>
+                    <div class="nf-social">
+                        <a href="#" aria-label="Instagram" class="nf-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="nf-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <!-- Bottom -->
+            <div class="nova-footer-bottom">
+                <p>&copy; 2026 NovaBuild Constructora S.L. · CIF: B-98765432</p>
+                <div class="nf-legal">
+                    <a href="#">Aviso Legal</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/34623458921" class="whatsapp-float" target="_blank" rel="noopener"
+        aria-label="Chat WhatsApp">
+        <div class="wa-pulse"></div>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.116.553 4.103 1.519 5.832L0 24l6.335-1.49A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.793 9.793 0 01-5.29-1.549l-.38-.225-3.94.927.99-3.798-.25-.393A9.793 9.793 0 012.18 12 9.82 9.82 0 0112 2.18 9.82 9.82 0 0121.82 12 9.82 9.82 0 0112 21.82z" />
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
