@@ -2023,16 +2023,25 @@ textarea {
 
     .about-stats {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        text-align: center;
     }
 
     .stat-number {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
     }
 
     .stat-label {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
+        line-height: 1.3;
+    }
+
+    .stat {
+        padding: 12px 4px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .about-image img {
@@ -2098,44 +2107,112 @@ textarea {
         font-size: 1.3rem;
     }
 
-    /* -- Contact (Better Mobile) -- */
+    /* -- Contact (Compact Mobile) -- */
     .contact-headline {
         font-size: clamp(1.5rem, 6vw, 2.5rem);
     }
 
     .contact-header {
-        margin-bottom: 32px;
+        margin-bottom: 24px;
     }
 
     .contact-subheadline {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .contact-layout {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 16px;
     }
 
     .contact-card {
-        padding: 24px 18px;
+        padding: 20px 16px;
+    }
+
+    .nova-field label {
+        font-size: 0.8rem;
+    }
+
+    .nova-form textarea {
+        max-height: 80px;
     }
 
     .form-row-2 {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 10px;
     }
 
     .nova-submit {
-        padding: 14px 20px;
-        font-size: 0.85rem;
+        padding: 12px 16px;
+        font-size: 0.8rem;
+    }
+
+    .form-disclaimer {
+        font-size: 0.7rem;
+        margin-top: 8px;
+    }
+
+    /* Info cards: 2 columns on mobile */
+    .info-stack {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .nova-info-card {
+        padding: 12px;
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+    }
+
+    .nova-info-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .nic-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .nic-label {
+        font-size: 0.6rem;
+    }
+
+    .nic-value {
+        font-size: 0.75rem;
+    }
+
+    .nic-arrow {
+        display: none;
+    }
+
+    /* Compact CTA card */
+    .info-cta-card {
+        padding: 20px 16px;
+    }
+
+    .cta-icon-ring {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 8px;
+    }
+
+    .cta-title {
+        font-size: 0.95rem;
+    }
+
+    .cta-desc {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
     }
 
     .nova-map-wrapper {
-        margin-top: 32px;
+        margin-top: 20px;
     }
 
     .nova-map-wrapper iframe {
-        height: 300px;
+        height: 220px;
     }
 
     /* -- Footer (Proper Mobile Stack) -- */
@@ -2633,8 +2710,8 @@ textarea {
     .bento-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        gap: 16px;
-        margin-top: 24px;
+        gap: 12px;
+        margin-top: 20px;
     }
 
     .bento-card[data-span="large"],
@@ -2642,61 +2719,81 @@ textarea {
     .bento-card[data-span="wide"] {
         grid-column: span 1;
         grid-row: span 1;
+        min-height: auto;
     }
 
     .bento-card[data-span="large"] {
-        aspect-ratio: 4/3;
-        min-height: 280px;
+        aspect-ratio: 16/9;
+        min-height: 200px;
+        max-height: 240px;
     }
 
     .bento-card[data-span="tall"] {
-        min-height: 220px;
+        max-height: 180px;
+        overflow: hidden;
     }
 
     .bento-card[data-span="wide"] {
-        min-height: 160px;
+        max-height: 120px;
     }
 
     .bento-content {
-        padding: 20px;
+        padding: 16px;
     }
 
     .bento-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 6px;
     }
 
     .bento-title.large {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .bento-desc {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .bento-content.horizontal {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
     }
 
-    .service-feature-list li {
-        font-size: 0.85rem;
-        padding: 8px 12px;
+    /* Hide feature list on mobile to save space */
+    .service-feature-list {
+        display: none;
     }
 
     .service-left {
-        gap: 16px;
+        gap: 12px;
     }
 
     .service-icon-box {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 16px;
+        width: 36px;
+        height: 36px;
+        margin-bottom: 12px;
     }
 
     .card-bg-icon {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .service-top .service-tag {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+
+    .arrow-circle {
+        width: 32px;
+        height: 32px;
     }
 }
 
