@@ -17,6 +17,22 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="apple-touch-icon" href="assets/logo.png">
 
+    <!-- Preload Parallax Images -->
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=3840&q=90&auto=format">
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=3840&q=90&auto=format">
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=3840&q=90&auto=format">
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=3840&q=90&auto=format">
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=3840&q=90&auto=format">
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=3840&q=90&auto=format">
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=3840&q=90&auto=format">
+
     <!-- Schema.org LocalBusiness Markup -->
     <script type="application/ld+json">
     {
@@ -462,6 +478,25 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Mobile Carousel Nav for Bento Grid -->
+            <div class="bento-carousel-nav" id="bentoNav">
+                <button class="bento-arrow bento-prev" id="bentoPrev" aria-label="Servicio anterior">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <div class="bento-counter">
+                    <span class="bento-current">01</span>
+                    <span class="bento-sep">/</span>
+                    <span class="bento-total">03</span>
+                </div>
+                <button class="bento-arrow bento-next" id="bentoNext" aria-label="Siguiente servicio">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
         </div>
     </section>

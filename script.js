@@ -428,4 +428,60 @@ Solicito asesoramiento profesional para mi proyecto.`;
         }, { passive: true });
     }
 
+    // ========== BENTO GRID MOBILE CAROUSEL ==========
+    const bentoGrid = document.querySelector('.bento-grid');
+    const bentoSlides = document.querySelectorAll('.bento-card');
+    const bentoPrev = document.getElementById('bentoPrev');
+    const bentoNext = document.getElementById('bentoNext');
+    const bentoCurrent = document.querySelector('.bento-current');
+    const bentoTotal = document.querySelector('.bento-total');
+
+    if (bentoGrid && bentoSlides.length > 0 && bentoPrev && bentoNext) {
+        let bentoIndex = 0;
+        const totalCards = bentoSlides.length;
+
+        function updateBentoCarousel() {
+            bentoSlides.forEach((card, i) => {
+                card.style.transform = `translateX(-${bentoIndex * 100}%)`;
+            });
+            if (bentoCurrent) {
+                bentoCurrent.textContent = String(bentoIndex + 1).padStart(2, '0');
+            }
+            if (bentoTotal) {
+                bentoTotal.textContent = String(totalCards).padStart(2, '0');
+            }
+        }
+
+        bentoNext.addEventListener('click', () => {
+            bentoIndex = (bentoIndex + 1) % totalCards;
+            updateBentoCarousel();
+        });
+
+        bentoPrev.addEventListener('click', () => {
+            bentoIndex = (bentoIndex - 1 + totalCards) % totalCards;
+            updateBentoCarousel();
+        });
+
+        // Touch swipe for bento carousel
+        let bentoTouchStartX = 0;
+        bentoGrid.addEventListener('touchstart', (e) => {
+            bentoTouchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        bentoGrid.addEventListener('touchend', (e) => {
+            const diff = bentoTouchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    bentoIndex = (bentoIndex + 1) % totalCards;
+                } else {
+                    bentoIndex = (bentoIndex - 1 + totalCards) % totalCards;
+                }
+                updateBentoCarousel();
+            }
+        }, { passive: true });
+
+        // Initialize
+        updateBentoCarousel();
+    }
+
 });

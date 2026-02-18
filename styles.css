@@ -2705,96 +2705,155 @@ textarea {
 }
 
 
-/* MOBILE RESPONSIVE BENTO */
+/* MOBILE RESPONSIVE BENTO — Carousel */
 @media (max-width: 900px) {
     .bento-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 12px;
+        display: flex;
+        overflow: hidden;
+        gap: 0;
         margin-top: 20px;
+        position: relative;
+    }
+
+    .bento-card {
+        min-width: 100%;
+        flex-shrink: 0;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: var(--radius-lg);
     }
 
     .bento-card[data-span="large"],
     .bento-card[data-span="tall"],
     .bento-card[data-span="wide"] {
-        grid-column: span 1;
-        grid-row: span 1;
-        min-height: auto;
-    }
-
-    .bento-card[data-span="large"] {
-        aspect-ratio: 16/9;
-        min-height: 200px;
-        max-height: 240px;
-    }
-
-    .bento-card[data-span="tall"] {
-        max-height: 180px;
-        overflow: hidden;
-    }
-
-    .bento-card[data-span="wide"] {
-        max-height: 120px;
+        grid-column: unset;
+        grid-row: unset;
+        min-height: 320px;
+        max-height: 380px;
+        aspect-ratio: auto;
     }
 
     .bento-content {
-        padding: 16px;
+        padding: 24px 20px;
+        justify-content: flex-end;
     }
 
     .bento-title {
-        font-size: 1.1rem;
-        margin-bottom: 6px;
+        font-size: 1.3rem;
+        margin-bottom: 8px;
     }
 
     .bento-title.large {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     .bento-desc {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 
     .bento-content.horizontal {
-        flex-direction: row;
-        align-items: center;
-        gap: 12px;
-        padding: 12px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        justify-content: center;
+        padding: 24px 20px;
     }
 
-    /* Hide feature list on mobile to save space */
+    /* Show feature list in carousel mode (card has enough space now) */
     .service-feature-list {
-        display: none;
+        display: flex;
+        margin-top: 16px;
+    }
+
+    .service-feature-list li {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        gap: 8px;
     }
 
     .service-left {
-        gap: 12px;
+        gap: 14px;
     }
 
     .service-icon-box {
-        width: 36px;
-        height: 36px;
-        margin-bottom: 12px;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 16px;
     }
 
     .card-bg-icon {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .service-top .service-tag {
         font-size: 0.6rem;
-        padding: 3px 8px;
+        padding: 4px 10px;
     }
 
     .arrow-circle {
-        width: 32px;
-        height: 32px;
+        width: 36px;
+        height: 36px;
     }
+
+    /* Carousel Navigation */
+    .bento-carousel-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .bento-arrow {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(8px);
+    }
+
+    .bento-arrow:active {
+        background: var(--white);
+        color: var(--black);
+        transform: scale(0.92);
+    }
+
+    .bento-counter {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        font-family: var(--font-display);
+    }
+
+    .bento-current {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--white);
+    }
+
+    .bento-sep {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.3);
+        margin: 0 2px;
+    }
+
+    .bento-total {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Hide carousel nav on desktop */
+.bento-carousel-nav {
+    display: none;
 }
 
 /* ============================================
