@@ -178,6 +178,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.2 });
 
         observer.observe(showcaseSection);
+
+        // Touch swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const swipeThreshold = 50;
+
+        showcaseSection.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        showcaseSection.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left → next project
+                    goToProject(showcaseIndex + 1);
+                } else {
+                    // Swipe right → previous project
+                    goToProject(showcaseIndex - 1);
+                }
+                resetAutoplay();
+            }
+        }, { passive: true });
+
     } else if (totalProjects > 0) {
         startAutoplay();
     }

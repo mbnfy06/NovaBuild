@@ -1917,7 +1917,7 @@ textarea {
 /* ---- Mobile (max-width: 768px) ---- */
 @media (max-width: 768px) {
     :root {
-        --section-padding: 80px;
+        --section-padding: 64px;
     }
 
     .container {
@@ -1938,289 +1938,92 @@ textarea {
     }
 
     .navbar {
-        padding: 16px 20px;
+        padding: 14px 20px;
     }
 
     .navbar.scrolled {
-        padding: 12px 20px;
+        padding: 10px 20px;
     }
 
     .logo-img {
-        height: 36px;
+        height: 32px;
     }
 
-    /* -- Hero -- */
+    /* -- Hero (FIX ZOOM EFFECT) -- */
     .hero {
         min-height: 100vh;
         min-height: 100dvh;
     }
 
     .hero-content {
-        padding: 0 20px;
-    }
-
-    .hero-title-reveal {
-        font-size: clamp(2.2rem, 10vw, 3.8rem);
-        margin-bottom: 24px;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.2rem, 10vw, 3.5rem);
-    }
-
-    .hero-badge {
-        font-size: 0.65rem;
-        letter-spacing: 2px;
-        padding: 6px 16px;
-        margin-bottom: 24px;
-    }
-
-    .hero-subtitle {
-        font-size: 0.95rem;
-        margin-bottom: 40px;
-        max-width: 100%;
-        line-height: 1.7;
-    }
-
-    .interactive-hover-btn {
-        padding: 14px 32px;
-        font-size: 0.8rem;
-    }
-
-    .hero-scroll {
-        margin-top: 48px;
-    }
-
-    .scroll-line {
-        height: 35px;
-    }
-
-    .hero-scroll span {
-        font-size: 0.55rem;
-        letter-spacing: 3px;
-    }
-
-    /* -- About -- */
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .about-title {
-        font-size: clamp(1.8rem, 6vw, 2.5rem);
-    }
-
-    .about-text {
-        font-size: 1rem;
-        margin-bottom: 40px;
-    }
-
-    .about-stats {
-        flex-wrap: wrap;
-        gap: 32px;
-    }
-
-    .stat-number {
-        font-size: 2.8rem;
-    }
-
-    .stat-label {
-        font-size: 0.75rem;
-    }
-
-    .about-image img {
-        border-radius: var(--radius-sm);
-        max-height: 350px;
-        object-fit: cover;
-        width: 100%;
-    }
-
-    /* -- Section Titles -- */
-    .section-title {
-        font-size: clamp(1.8rem, 6vw, 3rem);
-        margin-bottom: 48px;
-    }
-
-    .section-label {
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-        margin-bottom: 16px;
-    }
-
-    /* -- Projects Showcase -- */
-    .projects-showcase {
-        height: 70vh;
-        min-height: 500px;
-    }
-
-    .showcase-content {
-        padding: 32px 20px 70px;
-    }
-
-    .showcase-title {
-        font-size: clamp(1.8rem, 6vw, 3rem);
-    }
-
-    .showcase-category {
-        font-size: 0.7rem;
-        padding: 4px 12px;
-    }
-
-    .showcase-location {
-        font-size: 0.95rem;
-    }
-
-    .showcase-nav {
-        right: 20px;
-        bottom: 70px;
-        gap: 12px;
-    }
-
-    .showcase-arrow {
-        width: 44px;
-        height: 44px;
-    }
-
-    .showcase-counter {
-        margin-top: 20px;
-    }
-
-    .counter-current {
-        font-size: 1.5rem;
-    }
-
-    /* -- Contact -- */
-    .contact-headline {
-        font-size: clamp(1.8rem, 7vw, 3rem);
-    }
-
-    .contact-header {
-        margin-bottom: 48px;
-    }
-
-    .contact-subheadline {
-        font-size: 1rem;
-    }
-
-    .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .contact-card {
-        padding: 28px 20px;
-    }
-
-    .form-row-2 {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .nova-submit {
-        padding: 16px 20px;
-    }
-
-    .nova-map-wrapper {
-        margin-top: 40px;
-    }
-
-    .nova-map-wrapper iframe {
-        height: 250px;
-    }
-
-    /* -- Footer -- */
-    .nova-footer {
-        padding: 60px 0 32px;
-    }
-
-    .footer-cta-strip {
-        flex-direction: column;
+        padding: 0 24px;
         text-align: center;
-        gap: 24px;
-        padding: 32px 0;
-    }
-
-    .fcs-headline {
-        font-size: clamp(1.3rem, 5vw, 2rem);
-    }
-
-    .nova-footer-grid {
-        /* Keep 2 columns on tablet/mobile until very small */
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    /* Keep footer bottom STRAIGHT on tablet */
-    .nova-footer-bottom {
-        flex-direction: row;
-        text-align: left;
-        gap: 12px;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-    }
-
-    .nf-legal {
-        justify-content: flex-end;
-    }
-
-    /* -- WhatsApp -- */
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 54px;
-        height: 54px;
-    }
-}
-
-/* ---- Small Mobile (max-width: 480px) ---- */
-@media (max-width: 480px) {
-    :root {
-        --section-padding: 64px;
-    }
-
-    .container {
-        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-title-reveal {
-        font-size: clamp(1.8rem, 11vw, 3rem);
+        font-size: clamp(1.6rem, 8vw, 2.8rem);
+        margin-bottom: 16px;
+        line-height: 1.1;
     }
 
     .hero h1 {
-        font-size: clamp(1.8rem, 11vw, 3rem);
+        font-size: clamp(1.6rem, 8vw, 2.8rem);
     }
 
     .hero-badge {
         font-size: 0.6rem;
         letter-spacing: 1.5px;
+        padding: 5px 12px;
+        margin-bottom: 16px;
     }
 
     .hero-subtitle {
         font-size: 0.85rem;
+        margin-bottom: 32px;
+        max-width: 90%;
+        line-height: 1.6;
     }
 
     .interactive-hover-btn {
-        padding: 12px 24px;
+        padding: 12px 28px;
         font-size: 0.75rem;
     }
 
-    .contact-card {
-        padding: 24px 16px;
+    .hero-scroll {
+        margin-top: 32px;
     }
 
-    .info-cta-card {
-        padding: 32px 20px;
+    .scroll-line {
+        height: 30px;
     }
 
-    .nova-info-card {
-        padding: 16px;
+    .hero-scroll span {
+        font-size: 0.5rem;
+        letter-spacing: 2.5px;
+    }
+
+    /* -- About (Refined) -- */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
     }
 
     .about-title {
-        font-size: clamp(1.5rem, 7vw, 2rem);
+        font-size: clamp(1.4rem, 5.5vw, 2rem);
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+        margin-bottom: 32px;
+        line-height: 1.7;
     }
 
     .about-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 24px;
     }
 
@@ -2228,46 +2031,299 @@ textarea {
         font-size: 2.2rem;
     }
 
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    .about-image img {
+        border-radius: var(--radius-sm);
+        max-height: 280px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /* -- Section Titles -- */
     .section-title {
-        font-size: clamp(1.5rem, 7vw, 2.2rem);
+        font-size: clamp(1.5rem, 5.5vw, 2.5rem);
         margin-bottom: 32px;
     }
 
+    .section-label {
+        font-size: 0.65rem;
+        letter-spacing: 2.5px;
+        margin-bottom: 12px;
+    }
+
+    /* -- Projects Showcase (Touch-Friendly) -- */
+    .projects-showcase {
+        height: 65vh;
+        min-height: 420px;
+    }
+
+    .showcase-content {
+        padding: 20px 20px 80px;
+    }
+
     .showcase-title {
-        font-size: clamp(1.5rem, 7vw, 2.5rem);
+        font-size: clamp(1.4rem, 5vw, 2rem);
     }
 
-    .mobile-link {
-        font-size: 1.5rem;
+    .showcase-category {
+        font-size: 0.65rem;
+        padding: 4px 10px;
     }
 
-    .cta-title {
-        font-size: 1.1rem;
-    }
-
-    .cta-desc {
+    .showcase-location {
         font-size: 0.85rem;
     }
 
-    .nf-legal {
+    .showcase-nav {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
         gap: 16px;
+    }
+
+    .showcase-arrow {
+        width: 48px;
+        height: 48px;
+    }
+
+    .showcase-counter {
+        margin-top: 16px;
+    }
+
+    .counter-current {
+        font-size: 1.3rem;
+    }
+
+    /* -- Contact (Better Mobile) -- */
+    .contact-headline {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    .contact-header {
+        margin-bottom: 32px;
+    }
+
+    .contact-subheadline {
+        font-size: 0.9rem;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .contact-card {
+        padding: 24px 18px;
+    }
+
+    .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .nova-submit {
+        padding: 14px 20px;
+        font-size: 0.85rem;
+    }
+
+    .nova-map-wrapper {
+        margin-top: 32px;
+    }
+
+    .nova-map-wrapper iframe {
+        height: 300px;
+    }
+
+    /* -- Footer (Proper Mobile Stack) -- */
+    .nova-footer {
+        padding: 48px 0 24px;
+    }
+
+    .footer-cta-strip {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 24px 0;
+    }
+
+    .fcs-headline {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+
+    .nova-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px 0;
+    }
+
+    .nf-title {
+        font-size: 0.65rem;
+        margin-bottom: 16px;
+    }
+
+    .nova-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        padding: 16px 0 80px;
+    }
+
+    .nf-legal {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
     .nf-legal a {
         font-size: 0.75rem;
     }
 
-    /* Force stack only on VERY small screens */
-    .nova-footer-grid {
-        grid-template-columns: 1fr;
+    /* -- WhatsApp -- */
+    .whatsapp-float {
+        bottom: 16px;
+        right: 16px;
+        width: 52px;
+        height: 52px;
     }
 
-    .nova-footer-bottom {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding-bottom: 80px;
-        /* Space for WhatsApp */
+    /* -- Zoom Parallax as Horizontal Gallery -- */
+    .zoom-parallax {
+        display: block !important;
+        margin-bottom: 0;
+    }
+
+    .zoom-container {
+        height: auto !important;
+    }
+
+    .zoom-sticky {
+        position: relative !important;
+        height: auto !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        gap: 12px;
+        padding: 24px 20px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        background: #050505;
+    }
+
+    .zoom-sticky::-webkit-scrollbar {
+        display: none;
+    }
+
+    .zoom-el {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: auto;
+        height: auto;
+        flex-shrink: 0;
+        display: block;
+        scroll-snap-align: center;
+    }
+
+    .zoom-el .img-wrapper {
+        width: 75vw !important;
+        height: 50vh !important;
+        top: auto !important;
+        left: auto !important;
+        border-radius: 12px;
+    }
+}
+
+/* ---- Small Mobile (max-width: 480px) ---- */
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 48px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero-title-reveal,
+    .hero h1 {
+        font-size: clamp(1.4rem, 9vw, 2.2rem);
+    }
+
+    .hero-badge {
+        font-size: 0.55rem;
+        padding: 4px 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+        max-width: 95%;
+    }
+
+    .interactive-hover-btn {
+        padding: 11px 22px;
+        font-size: 0.7rem;
+    }
+
+    .about-title {
+        font-size: clamp(1.2rem, 6vw, 1.6rem);
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+        margin-bottom: 24px;
+    }
+
+    .showcase-title {
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+    }
+
+    .mobile-link {
+        font-size: 1.3rem;
+    }
+
+    .contact-card {
+        padding: 20px 14px;
+    }
+
+    .cta-title {
+        font-size: 1rem;
+    }
+
+    .cta-desc {
+        font-size: 0.8rem;
+    }
+
+    .bento-content {
+        padding: 16px;
+    }
+
+    .bento-title {
+        font-size: 1.05rem;
+    }
+
+    .bento-title.large {
+        font-size: 1.3rem;
+    }
+
+    .zoom-el .img-wrapper {
+        width: 80vw !important;
+        height: 40vh !important;
+    }
+
+    .nf-legal {
+        gap: 10px;
+    }
+
+    .nf-legal a {
+        font-size: 0.7rem;
     }
 }
 
@@ -2543,6 +2599,8 @@ textarea {
     .bento-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        gap: 16px;
+        margin-top: 24px;
     }
 
     .bento-card[data-span="large"],
@@ -2553,15 +2611,58 @@ textarea {
     }
 
     .bento-card[data-span="large"] {
-        aspect-ratio: 16/9;
-        /* Keep image impact */
-        min-height: 300px;
+        aspect-ratio: 4/3;
+        min-height: 280px;
+    }
+
+    .bento-card[data-span="tall"] {
+        min-height: 220px;
+    }
+
+    .bento-card[data-span="wide"] {
+        min-height: 160px;
+    }
+
+    .bento-content {
+        padding: 20px;
+    }
+
+    .bento-title {
+        font-size: 1.2rem;
+    }
+
+    .bento-title.large {
+        font-size: 1.6rem;
+    }
+
+    .bento-desc {
+        font-size: 0.85rem;
     }
 
     .bento-content.horizontal {
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 16px;
+    }
+
+    .service-feature-list li {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .service-left {
+        gap: 16px;
+    }
+
+    .service-icon-box {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 16px;
+    }
+
+    .card-bg-icon {
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -2678,9 +2779,4 @@ textarea {
     left: 25vw;
 }
 
-/* Mobile: hide parallax on small screens */
-@media (max-width: 768px) {
-    .zoom-parallax {
-        display: none;
-    }
-}
+/* Mobile: parallax is now a horizontal gallery (see 768px query) */
