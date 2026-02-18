@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroSlides.length > 0) {
         // Mark the first slide as active initially
         heroSlides[0].classList.add('active');
-        heroInterval = setInterval(advanceHeroSlide, 5000);
+        heroInterval = setInterval(advanceHeroSlide, 8000);
     }
 
     // ========== PROJECTS SHOWCASE ==========
@@ -148,6 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Auto-advance
     function startAutoplay() {
+        // Clear any existing interval first
+        if (showcaseAutoplay) clearInterval(showcaseAutoplay);
+
         showcaseAutoplay = setInterval(() => {
             goToProject(showcaseIndex + 1);
         }, 6000);
@@ -158,7 +161,24 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoplay();
     }
 
-    if (totalProjects > 0) {
+    // Reset showcase to start when scrolled into view
+    const showcaseSection = document.getElementById('proyectos');
+    if (showcaseSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Reset to first slide when entering view
+                    goToProject(0);
+                    startAutoplay();
+                } else {
+                    // Stop autoplay when not visible
+                    clearInterval(showcaseAutoplay);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(showcaseSection);
+    } else if (totalProjects > 0) {
         startAutoplay();
     }
 

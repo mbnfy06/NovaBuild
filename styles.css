@@ -1704,34 +1704,93 @@ textarea {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* Footer Bottom */
+/* Footer Bottom - Refined & Slimmer */
 .nova-footer-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 0;
-    flex-wrap: wrap;
-    gap: 16px;
+    padding: 12px 0 24px;
+    flex-wrap: nowrap;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 0;
+}
+
+/* Background Icon for Bento Cards */
+.card-bg-icon {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 180px;
+    height: 180px;
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+    color: var(--white);
+    transform: rotate(-15deg);
+    transition: transform 0.5s ease;
+}
+
+.bento-card:hover .card-bg-icon {
+    transform: rotate(0deg) scale(1.1);
 }
 
 .nova-footer-bottom p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    /* Smaller text */
     color: var(--text-muted);
+    opacity: 0.7;
 }
 
 .nf-legal {
     display: flex;
-    gap: 24px;
+    gap: 20px;
 }
 
 .nf-legal a {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    /* Smaller text */
     color: var(--text-muted);
     transition: color 0.3s ease;
+    opacity: 0.7;
 }
 
 .nf-legal a:hover {
     color: var(--text-secondary);
+}
+
+/* Agency Watermark */
+.agency-watermark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+}
+
+.agency-name {
+    font-weight: 700;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.agency-watermark:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.agency-watermark:hover .agency-name {
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 /* ============================================
@@ -2086,20 +2145,22 @@ textarea {
     }
 
     .nova-footer-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-        padding: 40px 0;
+        /* Keep 2 columns on tablet/mobile until very small */
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
+    /* Keep footer bottom STRAIGHT on tablet */
     .nova-footer-bottom {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: left;
         gap: 12px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
     }
 
     .nf-legal {
-        justify-content: center;
-        flex-wrap: wrap;
+        justify-content: flex-end;
     }
 
     /* -- WhatsApp -- */
@@ -2194,6 +2255,19 @@ textarea {
 
     .nf-legal a {
         font-size: 0.75rem;
+    }
+
+    /* Force stack only on VERY small screens */
+    .nova-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nova-footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 80px;
+        /* Space for WhatsApp */
     }
 }
 
