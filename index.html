@@ -19,19 +19,19 @@
 
     <!-- Preload Parallax Images -->
     <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=3840&q=90&auto=format">
+        href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&auto=format">
     <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=3840&q=90&auto=format">
+        href="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&auto=format">
     <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=3840&q=90&auto=format">
+        href="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80&auto=format">
     <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=3840&q=90&auto=format">
+        href="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80&auto=format">
     <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=3840&q=90&auto=format">
+        href="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1920&q=80&auto=format">
     <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=3840&q=90&auto=format">
+        href="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1920&q=80&auto=format">
     <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=3840&q=90&auto=format">
+        href="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80&auto=format">
 
     <!-- Schema.org LocalBusiness Markup -->
     <script type="application/ld+json">
@@ -55,7 +55,7 @@
         "longitude": -0.3956
       },
       "url": "https://novabuild.es",
-      "telephone": "+34623458921",
+      "telephone": "+34 000 000 000",
       "priceRange": "$$"
     }
     </script>
@@ -66,9 +66,16 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- GSAP & SplitType for high-end animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
 </head>
 
 <body>
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
     <div class="cinema-grain"></div>
     <!-- ============ NAVBAR ============ -->
     <nav class="navbar" id="navbar">
@@ -113,14 +120,7 @@
                 <img src="assets/hero-2.jpg" alt="Interior de lujo" class="hero-slide">
                 <img src="assets/hero-3.png" alt="Villa exclusiva" class="hero-slide">
             </div>
-            <!-- Image Slideshow (Now the primary background) -->
-            <div class="hero-slides-container">
-                <img src="assets/hero-1.jpg" alt="Arquitectura moderna" class="hero-slide active">
-                <img src="assets/hero-2.jpg" alt="Interior de lujo" class="hero-slide">
-                <img src="assets/hero-3.png" alt="Villa exclusiva" class="hero-slide">
-            </div>
             <div class="hero-overlay"></div>
-            <div class="hero-grain"></div>
         </div>
         <div class="hero-content">
             <div class="hero-badge-container">
@@ -204,43 +204,43 @@
             <div class="zoom-sticky">
                 <div class="zoom-el el-1">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=3840&q=90&auto=format"
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&auto=format"
                             alt="Villa de lujo moderna">
                     </div>
                 </div>
                 <div class="zoom-el el-2">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=3840&q=90&auto=format"
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&auto=format"
                             alt="Interior de diseño">
                     </div>
                 </div>
                 <div class="zoom-el el-3">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=3840&q=90&auto=format"
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80&auto=format"
                             alt="Arquitectura premium">
                     </div>
                 </div>
                 <div class="zoom-el el-4">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=3840&q=90&auto=format"
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80&auto=format"
                             alt="Casa contemporánea">
                     </div>
                 </div>
                 <div class="zoom-el el-5">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=3840&q=90&auto=format"
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1920&q=80&auto=format"
                             alt="Detalles constructivos">
                     </div>
                 </div>
                 <div class="zoom-el el-6">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=3840&q=90&auto=format"
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1920&q=80&auto=format"
                             alt="Fachada residencial">
                     </div>
                 </div>
                 <div class="zoom-el el-7">
                     <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=3840&q=90&auto=format"
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80&auto=format"
                             alt="Residencia exclusiva">
                     </div>
                 </div>
@@ -253,25 +253,25 @@
         <!-- Background images (crossfade) -->
         <div class="showcase-backgrounds">
             <div class="showcase-bg active"
-                style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=3840&q=90&auto=format')">
+                style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&auto=format')">
             </div>
             <div class="showcase-bg"
-                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=3840&q=90&auto=format')">
+                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80&auto=format')">
             </div>
             <div class="showcase-bg"
-                style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=3840&q=90&auto=format')">
+                style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80&auto=format')">
             </div>
             <div class="showcase-bg"
-                style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=3840&q=90&auto=format')">
+                style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80&auto=format')">
             </div>
             <div class="showcase-bg"
-                style="background-image: url('https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=3840&q=90&auto=format')">
+                style="background-image: url('https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1920&q=80&auto=format')">
             </div>
             <div class="showcase-bg"
-                style="background-image: url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=3840&q=90&auto=format')">
+                style="background-image: url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1920&q=80&auto=format')">
             </div>
             <div class="showcase-bg"
-                style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=3840&q=90&auto=format')">
+                style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80&auto=format')">
             </div>
         </div>
         <div class="showcase-overlay"></div>
@@ -374,11 +374,9 @@
                         <div class="service-top">
                             <span class="service-tag">High End</span>
                             <div class="service-icon-box filled">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                    <path d="M22 6l-10 7L2 6" />
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
                                 </svg>
                             </div>
                         </div>
@@ -395,9 +393,10 @@
                     <div class="spotlight-overlay"></div>
                     <div class="bento-content">
                         <div class="service-icon-box">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
-                                <path d="M2 22h20M4 22V7l8-5 8 5v15M6 22V9l6-3.5L18 9v13M10 22v-4h4v4" />
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
                             </svg>
                         </div>
                         <h3 class="bento-title">Obra Nueva<br>Residencial</h3>
@@ -454,11 +453,14 @@
                         </svg>
                         <div class="service-left">
                             <div class="service-icon-box">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.5">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                    <path d="M2 17l10 5 10-5" />
-                                    <path d="M2 12l10 5 10-5" />
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="m19 21-7-7-7 7"></path>
+                                    <path d="M5.5 14.5 12 8l6.5 6.5"></path>
+                                    <path d="m5 9 7-7 7 7"></path>
+                                    <path d="M2 3h20"></path>
+                                    <path d="M21 3v18"></path>
+                                    <path d="M3 21h18"></path>
+                                    <path d="M3 3v18"></path>
                                 </svg>
                             </div>
                             <div>
@@ -589,7 +591,7 @@
                         </div>
                         <h3 class="cta-title">¿Prefieres el chat directo?</h3>
                         <p class="cta-desc">Abre WhatsApp y hablamos ahora mismo sobre tu proyecto.</p>
-                        <a href="https://wa.me/34623458921" class="cta-wa-btn" target="_blank" rel="noopener">
+                        <a href="https://wa.me/34000000000" class="cta-wa-btn" target="_blank" rel="noopener">
                             <span>Abrir chat ahora</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -600,7 +602,7 @@
 
                     <!-- Info Cards Stack -->
                     <div class="info-stack">
-                        <a href="tel:+34623458921" class="nova-info-card">
+                        <a href="tel:+34 000 000 000" class="nova-info-card">
                             <div class="nic-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="1.5">
@@ -610,7 +612,7 @@
                             </div>
                             <div class="nic-text">
                                 <span class="nic-label">Teléfono</span>
-                                <span class="nic-value">+34 623 458 921</span>
+                                <span class="nic-value">+34 000 000 000</span>
                             </div>
                             <div class="nic-arrow">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -714,7 +716,7 @@
                 <div class="nf-links-group">
                     <h4 class="nf-heading">Oficina Central</h4>
                     <ul class="nf-list nf-contact-list">
-                        <li><a href="tel:+34623458921">+34 623 458 921</a></li>
+                        <li><a href="tel:+34 000 000 000">+34 000 000 000</a></li>
                         <li><a href="mailto:proyectos@novabuild.es">proyectos@novabuild.es</a></li>
                         <li><span>Av. Cortes Valencianas 58<br>46015 Valencia, España</span></li>
                     </ul>
@@ -766,7 +768,7 @@
     </footer>
 
     <!-- WhatsApp floating button -->
-    <a href="https://wa.me/34623458921" class="whatsapp-float" target="_blank" rel="noopener"
+    <a href="https://wa.me/34000000000" class="whatsapp-float" target="_blank" rel="noopener"
         aria-label="Chat WhatsApp">
         <div class="wa-pulse"></div>
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -777,6 +779,8 @@
         </svg>
     </a>
 
+    <!-- Lenis Smooth Scroll Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/dist/lenis.min.js"></script>
     <script src="script.js"></script>
 </body>
 

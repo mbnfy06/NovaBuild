@@ -68,8 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (heroSlides.length < 2) return;
         heroSlides[heroIndex].classList.remove('active');
         heroIndex = (heroIndex + 1) % heroSlides.length;
-        // Reset scale for Ken Burns effect
-        heroSlides[heroIndex].style.transform = 'scale(1.1)';
         void heroSlides[heroIndex].offsetWidth; // Force reflow
         heroSlides[heroIndex].classList.add('active');
     }
@@ -482,6 +480,109 @@ Solicito asesoramiento profesional para mi proyecto.`;
 
         // Initialize
         updateBentoCarousel();
+    }
+
+
+    // ========== LENIS SMOOTH SCROLL ==========
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Update smooth scroll for anchor links to use Lenis
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                lenis.scrollTo(target, {
+                    offset: -80,
+                    duration: 1.5
+                });
+            }
+        });
+    });
+
+
+    // ========== GSAP & SCROLL PROGRESS ==========
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. Scroll Progress Bar
+    const progressIndicator = document.getElementById('scrollProgress');
+    if (progressIndicator) {
+        gsap.to(progressIndicator, {
+            width: '100%',
+            ease: 'none',
+            scrollTrigger: {
+                trigger: document.body,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 0.3
+            }
+        });
+    }
+
+    // 2. Split Text Animation (Hero)
+    const heroTitle = document.querySelector('.hero-title-reveal');
+    if (heroTitle) {
+        // We use SplitType for granular control
+        const split = new SplitType('.hero-title-reveal .reveal-line', { types: 'words, chars' });
+        
+        gsap.from(split.chars, {
+            y: 100,
+            opacity: 0,
+            skewX: 10,
+            stagger: 0.02,
+            duration: 1.5,
+            ease: 'back.out(1.7)',
+            delay: 0.5
+        });
+    }
+
+    // 3. Section Reveal Animations
+    const revealElements = document.querySelectorAll('.about-title, .section-title, .bento-card, .nova-info-card');
+    revealElements.forEach(el => {
+        gsap.from(el, {
+            scrollTrigger: {
+                trigger: el,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+    });
+
+    // 4. Parallax effect for "Nuestra Firma" image
+    const aboutImage = document.querySelector('.about-image img');
+    if (aboutImage) {
+        gsap.to(aboutImage, {
+            y: -30,
+            scrollTrigger: {
+                trigger: '.about',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
     }
 
 });
