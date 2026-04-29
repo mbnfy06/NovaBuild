@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node optimize.js)",
+      "Bash(node minify.js)"
+    ]
+  }
+}

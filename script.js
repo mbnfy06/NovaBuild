@@ -484,7 +484,7 @@ Solicito asesoramiento profesional para mi proyecto.`;
 
 
     // ========== LENIS SMOOTH SCROLL ==========
-    const lenis = new Lenis({
+    window.lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
@@ -495,13 +495,17 @@ Solicito asesoramiento profesional para mi proyecto.`;
         touchMultiplier: 2,
         infinite: false,
     });
+    
+    const lenis = window.lenis;
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
+    if (window.isPreloaderActive) {
+        lenis.stop();
     }
 
-    requestAnimationFrame(raf);
+    // Proper Lenis + GSAP ScrollTrigger integration
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
 
     // Update smooth scroll for anchor links to use Lenis
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -581,6 +585,167 @@ Solicito asesoramiento profesional para mi proyecto.`;
                 start: 'top bottom',
                 end: 'bottom top',
                 scrub: true
+            }
+        });
+    }
+
+    // ========== BUILD ANIMATION (SCROLL FRAME SEQUENCE) ==========
+    const buildCanvas = document.getElementById('buildCanvas');
+    if (buildCanvas) {
+        const ctx = buildCanvas.getContext('2d');
+        const TOTAL_FRAMES = 40;
+        const frames = [];
+        let currentFrameIndex = 0;
+        let ctaActive = false;
+
+        // Frames animate over the first 78% of scroll, then freeze on last frame.
+        // The remaining 22% is "CTA hold" space — the user scrolls naturally
+        // through it while the card is visible. No lenis.stop() needed.
+        const ANIM_END = 0.78;
+
+        function resizeCanvas() {
+            buildCanvas.width = buildCanvas.offsetWidth;
+            buildCanvas.height = buildCanvas.offsetHeight;
+            if (frames[currentFrameIndex] && frames[currentFrameIndex].complete) {
+                drawFrame(frames[currentFrameIndex]);
+            }
+        }
+
+        function drawFrame(img) {
+            if (!img || !img.complete || !img.naturalWidth) return;
+            const cw = buildCanvas.width;
+            const ch = buildCanvas.height;
+            const iw = img.naturalWidth;
+            const ih = img.naturalHeight;
+            const scale = Math.max(cw / iw, ch / ih);
+            const x = (cw - iw * scale) / 2;
+            const y = (ch - ih * scale) / 2;
+            ctx.clearRect(0, 0, cw, ch);
+            ctx.drawImage(img, x, y, iw * scale, ih * scale);
+        }
+
+        // Lazy-load frames only when section is near viewport (saves ~5MB on initial load)
+        let framesLoaded = false;
+
+        function loadFrames() {
+            if (framesLoaded) return;
+            framesLoaded = true;
+            for (let i = 1; i <= TOTAL_FRAMES; i++) {
+                const img = new Image();
+                img.src = `frames-webp/ezgif-frame-${String(i).padStart(3, '0')}.webp`;
+                img.onload = () => {
+                    if (i === 1) {
+                        resizeCanvas();
+                        drawFrame(img);
+                    }
+                };
+                frames.push(img);
+            }
+        }
+
+        const buildSection = document.querySelector('.build-anim-section');
+        if (buildSection) {
+            const frameObserver = new IntersectionObserver(
+                (entries) => {
+                    if (entries[0].isIntersecting) {
+                        loadFrames();
+                        frameObserver.disconnect();
+                    }
+                },
+                { rootMargin: '600px' }
+            );
+            frameObserver.observe(buildSection);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Build glitch tile grid
+        const ctaOverlay = document.getElementById('buildCtaCard');
+        const tilesContainer = document.getElementById('buildCtaTiles');
+        const COLS = 12;
+        const ROWS = 7;
+
+        if (tilesContainer) {
+            tilesContainer.style.gridTemplateColumns = `repeat(${COLS}, 1fr)`;
+            tilesContainer.style.gridTemplateRows = `repeat(${ROWS}, 1fr)`;
+            for (let _i = 0; _i < COLS * ROWS; _i++) {
+                const tile = document.createElement('div');
+                tile.className = 'build-cta-tile';
+                tilesContainer.appendChild(tile);
+            }
+        }
+
+        function showCta() {
+            if (ctaActive || !ctaOverlay) return;
+            ctaActive = true;
+
+            gsap.set(ctaOverlay, { opacity: 1, pointerEvents: 'auto' });
+
+            const tiles = Array.from(ctaOverlay.querySelectorAll('.build-cta-tile'));
+            gsap.set(tiles, { opacity: 1, scaleX: 1, scaleY: 1 });
+            tiles.sort(() => Math.random() - 0.5);
+
+            tiles.forEach((tile, i) => {
+                const delay = i * (0.7 / tiles.length);
+                const glitch = Math.random() > 0.55;
+                const origin = Math.random() > 0.5 ? 'left center' : 'right center';
+
+                if (glitch) {
+                    gsap.timeline({ delay })
+                        .to(tile, { opacity: 0, duration: 0.04 })
+                        .to(tile, { opacity: 1, duration: 0.04 })
+                        .to(tile, { opacity: 0, duration: 0.04 })
+                        .to(tile, { opacity: 1, duration: 0.04 })
+                        .to(tile, { opacity: 0, scaleX: 0, duration: 0.1, ease: 'power2.in', transformOrigin: origin });
+                } else {
+                    gsap.to(tile, {
+                        opacity: 0, scaleX: 0, duration: 0.12,
+                        delay, ease: 'power2.in', transformOrigin: origin
+                    });
+                }
+            });
+        }
+
+        function hideCta() {
+            if (!ctaActive || !ctaOverlay) return;
+            ctaActive = false;
+            gsap.set(ctaOverlay, { opacity: 0, pointerEvents: 'none' });
+            const tiles = ctaOverlay.querySelectorAll('.build-cta-tile');
+            gsap.killTweensOf(tiles);
+            gsap.set(tiles, { opacity: 1, scaleX: 1, scaleY: 1 });
+        }
+
+        // ScrollTrigger: map scroll progress → frame index
+        ScrollTrigger.create({
+            trigger: '.build-anim-section',
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 1,
+            onUpdate(self) {
+                // Clamp progress to ANIM_END so frames freeze on last frame
+                // while the remaining scroll serves as CTA hold time
+                const animProgress = Math.min(self.progress, ANIM_END) / ANIM_END;
+                const idx = Math.min(Math.floor(animProgress * TOTAL_FRAMES), TOTAL_FRAMES - 1);
+
+                if (idx !== currentFrameIndex) {
+                    currentFrameIndex = idx;
+                    if (frames[currentFrameIndex] && frames[currentFrameIndex].complete) {
+                        drawFrame(frames[currentFrameIndex]);
+                    }
+                }
+
+                if (self.progress >= ANIM_END) {
+                    showCta();
+                } else {
+                    hideCta();
+                }
+            },
+            onLeave() {
+                gsap.to('.build-anim-sticky', { opacity: 0, duration: 0.4, ease: 'power2.in' });
+            },
+            onEnterBack() {
+                gsap.set('.build-anim-sticky', { opacity: 1 });
             }
         });
     }

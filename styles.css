@@ -3020,6 +3020,154 @@ textarea {
     left: 25vw;
 }
 
+/* ============ BUILD ANIMATION SECTION ============ */
+.build-anim-section {
+    height: 450vh;
+    position: relative;
+}
+
+.build-anim-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+#buildCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* CTA Overlay */
+.build-cta-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.build-cta-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 100%);
+    pointer-events: none;
+}
+
+/* Glassmorphism card */
+.build-cta-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(8, 8, 8, 0.8);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-lg);
+    padding: 56px 64px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(212, 175, 55, 0.07), inset 0 1px 0 rgba(255,255,255,0.06);
+    overflow: hidden;
+}
+
+/* Actual card content sits under the tiles */
+.build-cta-inner {
+    position: relative;
+    z-index: 1;
+}
+
+/* Tile grid covers the card, z-index above content */
+.build-cta-tiles {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    pointer-events: none;
+    z-index: 2;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.build-cta-tile {
+    background: #080808;
+    will-change: transform, opacity;
+}
+
+.build-cta-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.build-cta-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.build-cta-sub {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 36px;
+}
+
+.build-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-gradient);
+    color: #000;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 32px;
+    border-radius: var(--radius-full);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+}
+
+.build-cta-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .build-anim-section {
+        height: 350vh;
+    }
+
+    .build-cta-content {
+        padding: 40px 28px;
+    }
+
+    .build-cta-headline {
+        font-size: 2.2rem;
+    }
+}
+
 /* ============ PERFORMANCE OPTIMIZATIONS ============ */
 .zoom-el, 
 .img-wrapper img, 
